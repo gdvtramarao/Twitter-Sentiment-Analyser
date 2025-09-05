@@ -55,26 +55,37 @@ if st.button("🔍 Analyze Sentiment"):
             pred = model.predict(X_input)[0]
             sentiment = label_encoder.inverse_transform([pred])[0]
 
-        # Probabilities
-        proba = model.predict_proba(X_input)[0] if sentiment == "Positive" else model.predict_proba(X_input)[0]
-        proba_dict = {label_encoder.inverse_transform([i])[0]: p for i, p in enumerate(proba)}
+            # Probabilities
+            proba = model.predict_proba(X_input)[0]
+            proba_dict = {label_encoder.inverse_transform([i])[0]: p for i, p in enumerate(proba)}
 
-        # Styled card for prediction
-        label, color = sentiment_colors[sentiment]
-        st.markdown(
-            f"""
-            <div style="background-color:{color}; padding:20px; border-radius:10px; text-align:center;">
-                <h2 style="color:white;">{label}</h2>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            # Styled card for prediction
+            label, color = sentiment_colors[sentiment]
+            st.markdown(
+                f"""
+                <div style="background-color:{color}; padding:20px; border-radius:10px; text-align:center;">
+                    <h2 style="color:white;">{label}</h2>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
-        # Confidence scores
-        st.subheader("📊 Confidence Scores:")
-        for s, p in proba_dict.items():
-            lbl, clr = sentiment_colors[s]
-            st.markdown(f"**{lbl}**: {p*100:.2f}%")
+            # Confidence scores
+            st.subheader("📊 Confidence Scores:")
+            for s, p in proba_dict.items():
+                lbl, clr = sentiment_colors[s]
+                st.markdown(f"**{lbl}**: {p*100:.2f}%")
+        else:
+            # Directly return Positive sentiment for positive phrases
+            label, color = sentiment_colors[sentiment]
+            st.markdown(
+                f"""
+                <div style="background-color:{color}; padding:20px; border-radius:10px; text-align:center;">
+                    <h2 style="color:white;">{label}</h2>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
     else:
         st.warning("⚠️ Please type something before analyzing.")
@@ -116,6 +127,6 @@ for i, ex in enumerate(examples):
 # Footer
 st.markdown("---")
 st.markdown(
-    "<p style='text-align:center; color:grey;'>✨ Built with Streamlit | Project by Ramarao</p>",
+    "<p style='text-align:center; color:grey;'>✨ Built with Streamlit | Project by gdvtramarao</p>",
     unsafe_allow_html=True
 )
