@@ -9,6 +9,28 @@ This project uses Machine Learning (ML) to perform **sentiment analysis** on Twi
 - **Interactive Web App:** Built with **Streamlit** to allow users to input text and get the sentiment prediction along with confidence scores.
 - **Machine Learning Model:** **Logistic Regression** classifier for sentiment prediction, trained on labeled Twitter data.
 
+# 🚀 Twitter Sentiment Analyzer with Live Demo  
+
+[![Open in Streamlit](https://img.shields.io/badge/🔗%20Live%20Demo-Streamlit-red?logo=streamlit&style=for-the-badge)](https://gdvtramarao-sentiment-analyzer.streamlit.app/)
+
+🔍 **Real-time Twitter sentiment analysis web app** built with **Logistic Regression** and **TF-IDF**.  
+Classifies text into: **Positive 🟢, Negative 🔴, Neutral 🟡, or Irrelevant ⚪**.  
+
+---
+
+## ✨ Features  
+- ⚡ Instant sentiment predictions on tweets & text  
+- 📊 ML pipeline with TF-IDF + Logistic Regression  
+- 🌐 Deployed on **Streamlit Cloud** for easy access  
+- 🎨 Simple and clean UI  
+
+---
+
+## 📸 Demo Screenshot
+<img width="1161" height="810" alt="image" src="https://github.com/user-attachments/assets/715b2aec-079c-41e2-a4c2-a4318b115ba7" />
+
+
+
 ## Technologies Used
 - **Python**
 - **Streamlit**: For building the web application.
