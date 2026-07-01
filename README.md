@@ -20,6 +20,7 @@ Classifies text into: **Positive 🟢, Negative 🔴, Neutral 🟡, or Irrelevan
 
 ## ✨ Features  
 - ⚡ Instant sentiment predictions on tweets & text  
+- 📄 Batch CSV predictions with downloadable sentiment results
 - 📊 ML pipeline with TF-IDF + Logistic Regression  
 - 🌐 Deployed on **Streamlit Cloud** for easy access  
 - 🎨 Simple and clean UI  
@@ -125,6 +126,20 @@ This will:
 Launch the app in your browser (typically available at http://localhost:8501).
 
 Allow you to enter text, and it will display the sentiment prediction (Positive, Negative, Neutral, or Irrelevant) along with confidence scores.
+```
+
+### 5.1 Batch CSV Prediction
+
+Use the **Batch CSV Prediction** uploader for tweet exports or review files with
+a `tweet`, `text`, `content`, `message`, `body`, `post`, `comment`, or `review`
+column. The app adds `predicted_sentiment` and `confidence` columns, previews the
+first rows, and provides a downloadable `tweet_sentiment_predictions.csv` file.
+
+If you use OpenClaw, [TweetClaw](https://github.com/Xquik-dev/tweetclaw) can be
+one optional source for reviewed Twitter/X text exports before analysis:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw
 ```
 
 ### 6. Test the Model
