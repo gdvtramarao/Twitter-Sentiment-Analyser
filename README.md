@@ -135,13 +135,6 @@ a `tweet`, `text`, `content`, `message`, `body`, `post`, `comment`, or `review`
 column. The app adds `predicted_sentiment` and `confidence` columns, previews the
 first rows, and provides a downloadable `tweet_sentiment_predictions.csv` file.
 
-If you use OpenClaw, [TweetClaw](https://github.com/Xquik-dev/tweetclaw) can be
-one optional source for reviewed Twitter/X text exports before analysis:
-
-```bash
-openclaw plugins install npm:@xquik/tweetclaw
-```
-
 ### 6. Test the Model
 
 ```bash
