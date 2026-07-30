@@ -8,6 +8,7 @@ This project uses Machine Learning (ML) to perform **sentiment analysis** on Twi
 - **Sentiment Classification:** The sentiment of a tweet is classified into one of four categories: Positive, Negative, Neutral, or Irrelevant.
 - **Interactive Web App:** Built with **Streamlit** to allow users to input text and get the sentiment prediction along with confidence scores.
 - **Machine Learning Model:** **Logistic Regression** classifier for sentiment prediction, trained on labeled Twitter data.
+- **Xquik Batch Import:** Classify documented JSON and CSV exports or CLI JSONL files.
 
 # 🚀 Twitter Sentiment Analyzer with Live Demo  
 
@@ -113,22 +114,28 @@ Save the trained model (logreg_model.pkl) and vectorizer (vectorizer.pkl) in the
 
 ### 5. Run the Streamlit Web Application
 
-```bash
-
 After the model is trained, run the Streamlit app to start the web interface for sentiment analysis.
 
+```bash
 streamlit run app.py
-
-
-This will:
-
-Launch the app in your browser (typically available at http://localhost:8501).
-
-Allow you to enter text, and it will display the sentiment prediction (Positive, Negative, Neutral, or Irrelevant) along with confidence scores.
 ```
+
+The app opens in your browser, usually at http://localhost:8501.
+
+Enter text to see its sentiment and confidence scores.
+
+### Analyze Xquik Exports
+
+Upload a [Xquik extraction export](https://docs.xquik.com/api-reference/extractions/export)
+to classify up to 5,000 rows. The importer reads the documented `tweetText`
+JSON field. It also reads the documented `Tweet Text` CSV column. Xquik CLI
+JSONL files work too. Files remain inside the Streamlit app. No Xquik API key
+is required.
 
 ### 6. Test the Model
 
 ```bash
 In the Streamlit app, you can test various phrases. You can also test the app with the provided example texts or type your own text. The app will show the predicted sentiment and the confidence score for each class.
 ```
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
